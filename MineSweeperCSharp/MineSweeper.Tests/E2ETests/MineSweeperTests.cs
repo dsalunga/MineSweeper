@@ -4,7 +4,7 @@ using MineSweeper.Engine;
 namespace MineSweeper.Tests.E2ETests
 {
     [TestFixture]
-    public class MineSweeperTests
+    public class MinesweeperTests
     {
         [Test]
         public void TestGameFlow_WinScenario_AllNonMineCellsSelected()

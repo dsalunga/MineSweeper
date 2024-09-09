@@ -75,7 +75,7 @@ class Grid(val size: Int) {
         // Check all eight possible directions around the cell
         for (i in -1..1) {
             for (j in -1..1) {
-                if (i == 0 && j == 0) // Skip the current cell itself
+                if (i == 0 && j == 0)
                     continue // Skip the current cell itself
 
                 val newRow = row + i
