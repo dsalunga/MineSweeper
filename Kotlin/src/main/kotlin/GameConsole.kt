@@ -2,6 +2,7 @@ package org.minesweeper
 
 import org.minesweeper.engine.BaseGame
 import org.minesweeper.engine.Point
+import kotlin.math.round
 
 
 /**
@@ -100,9 +101,13 @@ class GameConsole : BaseGame() {
         while (!validInput) {
             print("Enter the number of mines to place on the grid (maximum is $maxMines): ")
             val input = readlnOrNull()
-            if (input != null && input.toIntOrNull() in 1..maxMines) {
-                numberOfMines = input.toInt()
-                validInput = true
+            if (input != null) {
+                var inputFloat = input.toFloat()
+                if (inputFloat >=1 && inputFloat <= maxMines) {
+                    numberOfMines = round(inputFloat).toInt()
+                    println("numberOfMines: $numberOfMines")
+                    validInput = true
+                }
             } else {
                 println("Invalid input. Please enter a number between 1 and $maxMines.")
             }
